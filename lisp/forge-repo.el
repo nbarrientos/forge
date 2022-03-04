@@ -238,6 +238,7 @@ Return the repository identified by HOST, OWNER and NAME."
 
 (defun forge-current-repository ()
   (or (forge-repository-at-point)
+      (forge-get-repository nil)
       (and (derived-mode-p 'forge-repository-list-mode)
            (forge-get-repository (list :id (tabulated-list-get-id))))))
 
